@@ -1,0 +1,53 @@
+{
+  "name": "static-page-boilerplate-webpack-browsersync",
+  "version": "1.0.0",
+  "description": "Static Webpage with Webpack and Browsersync Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development webpack -d --progress --watch",
+    "build": "NODE_ENV=production webpack -p --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actuallymentor/static-webpage-boilerplate-webpack-browsersync.git"
+  },
+  "author": "Mentor Palokaj <mentor@palokaj.co> (https://github.com/actuallymentor)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/actuallymentor/static-webpage-boilerplate-webpack-browsersync/issues"
+  },
+  "homepage": "https://github.com/actuallymentor/static-webpage-boilerplate-webpack-browsersync#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.15.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^3.6.0",
+    "cssnano": "^4.1.11",
+    "del": "^5.1.0",
+    "dotenv": "^8.6.0",
+    "html-minifier": "^4.0.0",
+    "ip": "^1.1.5",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "pug": "^2.0.4",
+    "sass": "^1.38.0",
+    "sha3": "^2.1.4",
+    "sitemap": "^5.1.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
+  }
+}

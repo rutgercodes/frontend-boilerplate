@@ -1,0 +1,37 @@
+head
+	meta( charset='utf-8' )
+	meta( http-equiv="x-ua-compatible" content="ie=edge" )
+	meta( name="viewport" content="width=device-width, initial-scale=1" )
+	base( href=site.system.url )
+	meta( name="robots" content="index,follow,noodp" )
+	meta( name="googlebot" content="index,follow" )
+	if site.system.gverification
+		meta( name="google-site-verification" content=site.system.gverification )
+
+	//- Regular meta tags
+	title !{site.identity.title} - #{page.title}
+	meta( name="description" content=site.identity.desc )
+
+	//- DNS Prefetching
+	link( rel="dns-prefetch" href="//www.google-analytics.com" )
+	link( rel="dns-prefetch" href="//fonts.googleapis.com.com" )
+
+	//- Load essential css
+	style!=css
+	//- Load the main css stylesheet if there is no js support
+	noscript: link( rel="stylesheet" type="text/css" href=site.system.url + 'assets/css/styles.css' )
+
+	//- Get the webpack script
+	script( src=site.system.url + `assets/js/app-${site.system.timestamp}.js`, async)
+
+	//- Load the main css stylesheet and fonts if there is js support
+	script( type="application/javascript" ).
+		const loadAsync = async ( url, mime ) => {
+			let link = document.createElement( "link" )
+			link.href = url
+			link.type = mime || ""
+			link.rel = "stylesheet"
+			return document.getElementsByTagName( "head" )[0].appendChild( link )
+		}
+		loadAsync( "#{ site.system.url + 'assets/css/styles.css' }", "text/css" )
+		loadAsync( "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", "" )
